@@ -1,1 +1,13 @@
 /* BASIC STYLES HERE */
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  color: azure;
+}
+
+
+main {
+  flex-grow: 1;
+}
