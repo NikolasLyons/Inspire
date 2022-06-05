@@ -48,14 +48,19 @@
               <p>Today</p>
             </div>
             <div class="col-12">
-              <ol>
-                <li></li>
-              </ol>
+              <ul class="p-3" id="todos">
+                <!-- <li>
+                  <input type="checkbox" name="todo" id="todo">
+                  <label for="todo">hello</label>
+                </li> -->
+                
+                
+              </ul>
             </div>
-            <div class="col-12 p-2">
-              <input class="border-none outline-none" type="text">
+            <form class="col-12 p-2" onsubmit="app.todosController.createToDo()">
+              <input class="border-none outline-none" name="description" id="description" type="text">
               <button class="btn btn-success">New ToDo</button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
