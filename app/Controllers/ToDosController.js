@@ -16,9 +16,8 @@ export class ToDosController{
     console.log('live with the todos')
     ProxyState.on('todos', _drawTodos)
     this.getToDos()
-    
     _drawTodos()
-    this.deleteTodo()
+    
    
   }
   async getToDos(){
@@ -32,7 +31,6 @@ export class ToDosController{
   }
   async createToDo(){
     try {
-      debugger
       window.event.preventDefault()
       console.log('creating todo')
       let form = window.event.target
