@@ -5,8 +5,18 @@ import { Pop } from "../Utils/Pop.js"
 function _drawTodos(){
   let todo = ProxyState.todos
   let template = ''
-  todo.forEach(t => template += t.Template)
+  let finished = 0
+  console.log('shit happeneds', todo)
+  todo.forEach(t =>{ 
+    template += t.Template
+    if(t.completed){
+      finished ++
+      }
+    })
   document.getElementById('todos').innerHTML = template
+  document.getElementById('finished').innerText = finished
+
+
 }
 
 
@@ -16,7 +26,7 @@ export class ToDosController{
     console.log('live with the todos')
     ProxyState.on('todos', _drawTodos)
     this.getToDos()
-    _drawTodos()
+ 
     
    
   }
@@ -41,13 +51,28 @@ export class ToDosController{
     } catch (error) {
       console.log(error)
       Pop.toast(error.message,'error')
+      console.log('error')
+      
+    }
+  }
+
+  async completeTodo(id){
+    try {
+     await todosService.completeTodo(id)
+
+    } catch (error) {
+      Pop.toast(error.message,'error')
+      console.log('error')
       
     }
   }
 
   async deleteTodo(id){
     try {
-      await todosService.deleteTodo(id)
+      if(await Pop.confirm('are you sure you want to delete task')){
+
+        todosService.deleteTodo(id)
+      }
     } catch (error) {
       console.log(error)
       Pop.toast(error.message, 'error')

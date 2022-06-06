@@ -32,7 +32,7 @@ export class Weather{
   }
   get Celsius(){
     return `
-    <div class="col-12 p-4" onclick="app.weatherController._drawWeather()">
+    <div class="col-12 p-4" onclick="app.weatherController.seeFahrenheit()">
       
       <p>${this.name}</p>
       <p>${this.celsius}°C</p>

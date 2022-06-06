@@ -11,3 +11,12 @@ body{
 main {
   flex-grow: 1;
 }
+
+.hoverWrapper:hover #showName {
+  display: block;
+}
+
+.hoverWrapper #showName{
+  display: none;
+  position: absolute;
+}
