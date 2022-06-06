@@ -20,3 +20,9 @@ main {
   display: none;
   position: absolute;
 }
+
+.del{
+
+  color:red;
+  text-decoration: line-through;
+}

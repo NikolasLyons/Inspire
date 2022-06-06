@@ -26,6 +26,7 @@ export class ToDosController{
     console.log('live with the todos')
     ProxyState.on('todos', _drawTodos)
     this.getToDos()
+   
  
     
    
@@ -53,11 +54,13 @@ export class ToDosController{
       Pop.toast(error.message,'error')
       console.log('error')
       
+      
     }
   }
 
   async completeTodo(id){
     try {
+     
      await todosService.completeTodo(id)
 
     } catch (error) {

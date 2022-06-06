@@ -41,5 +41,9 @@ export class WeatherController{
   seeCelsius(){
     document.getElementById('weather').innerHTML = ProxyState.weather.Celsius
   }
+  seeKelvin(){
+    document.getElementById('weather').innerHTML = ProxyState.weather.WeatherTemplate
+
+  }
 
 }

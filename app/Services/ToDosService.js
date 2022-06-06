@@ -29,7 +29,7 @@ class ToDosService{
   async completeTodo(id){
     let Todo = ProxyState.todos.find(t=> t.id == id)
     Todo.completed = !Todo.completed
-    const res = await sandboxApi.put(`nik/todos/${id}`,id)
+    const res = await sandboxApi.put(`nik/todos/${id}`,Todo)
     console.log('we edditing', res.data)
     ProxyState.todos = ProxyState.todos
    

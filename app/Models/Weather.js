@@ -16,7 +16,7 @@ export class Weather{
     <div class="col-12 p-4" onclick="app.weatherController.seeFahrenheit()">
       
       <p>${this.name}</p>
-      <p>${this.temp}</p>
+      <p class="selectable">${this.temp}K</p>
     </div> 
 `
   }
@@ -25,17 +25,17 @@ export class Weather{
     <div class="col-12 p-4" onclick="app.weatherController.seeCelsius()">
       
       <p>${this.name}</p>
-      <p>${this.fahrenheit}°F</p>
+      <p  class="selectable">${this.fahrenheit}°F</p>
     </div> 
     
 `
   }
   get Celsius(){
     return `
-    <div class="col-12 p-4" onclick="app.weatherController.seeFahrenheit()">
+    <div class="col-12 p-4" onclick="app.weatherController.seeKelvin()">
       
       <p>${this.name}</p>
-      <p>${this.celsius}°C</p>
+      <p class="selectable">${this.celsius}°C</p>
     </div> 
 `
   }
